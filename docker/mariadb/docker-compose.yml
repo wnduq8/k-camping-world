@@ -2,9 +2,12 @@ version: '3.1'
 
 services:
   db:
-    image: mariadb
+    platform: linux/x86_64
+    container_name: mysql_db_1
+    image: mysql:5.7
     restart: always
     environment:
+      MYSQL_DATABASE: campingdb
       MYSQL_ROOT_PASSWORD: qkrwnduq14!
     volumes:
       - ./db:/var/lib/mysql
