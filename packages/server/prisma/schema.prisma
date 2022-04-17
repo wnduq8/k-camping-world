@@ -10,11 +10,11 @@ datasource db {
 model Members {
   id                    Int      @id @default(autoincrement())
   email                 String   @unique
-  password              String
+  password              String?
   nickname              String   @unique
   photo_url             String?
   created_at            DateTime @default(now())
-  lastlogin_datetime    DateTime @default(now())
+  lastlogin_at          DateTime @updatedAt
   social_flatform       String?
   is_social_login       Boolean  @default(false)
 }
